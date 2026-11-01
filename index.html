@@ -78,8 +78,6 @@
           without permission or overstaying a visa, but ICE's systems show no criminal conviction or pending charge. The
           label does not mean they were in the country legally.</p>
       </aside>
-
-
     </div>
     <figure class="chart-frame wide" id="f-growth">
       <h3 class="chart-hed">Arrests of people with “no record” drove increase in Maryland</h3>
@@ -151,8 +149,7 @@
       <p>Since Trump took office, about 23% of ICE's arrests in Maryland have been on the Eastern Shore, a region home
         to about 7% of the state's residents.</p>
       <p>Wicomico County, which includes Salisbury, had the highest ICE arrest rate in the state, about 107 arrests for
-        every 10,000 residents. Nearly all were made in the community rather than at the county jail. The rate counts
-        all residents, not only immigrants, and the records do not show where the people arrested lived.</p>
+        every 10,000 residents. Nearly all were made in the community.</p>
       <p>ICE also made arrests inside its own offices in Baltimore, including one where immigrants under supervision
         report for scheduled check-ins. Since Jan. 20, 2025, the agency has recorded 889 arrests at the two offices,
         about three in four of them of people with no record.</p>
@@ -204,17 +201,15 @@
       <p>Immigration lawyers say the numbers cut against how the administration describes its enforcement. "They keep
         saying we're going after the worst of the worst and the reality is they're going after everyone," Landan said.
         "It's just about the numbers for them."</p>
+
       <p class="readnext"><a href="https://mehedi-marof.github.io/After-ICE-arrests-in-Maryland/"><span>Read
             next</span>After an ICE arrest in Maryland, most people were held out of state. Many were moved again and
           again</a></p>
+      <p class="readnext"><a href="https://mehedi-marof.github.io/maryland-police-can-still-help-ICE/"><span>Read
+            next</span>Maryland banned 287(g). Local law enforcement still can help if they want to</a></p>
+
     </div>
     <div class="col">
-      <section class="limits-text">
-        <h2>What the records can't tell us</h2>
-        <p>The records show each person's criminal history and how an arrest happened, not why ICE made the arrest. "No
-          record" reflects what ICE's systems showed at the time of arrest, which can be incomplete. The records do not
-          show immigration status. ICE often records a general area rather than an address, so CNS placed arrests by the
-          city or county ICE listed. ICE keeps updating its records, so counts for the most recent months may grow.</p>
       </section>
       <section class="methods">
         <h2>How we did this analysis</h2>
@@ -225,7 +220,9 @@
             href="https://deportationdata.org/data/processed/ice.html">data page</a>. We used the project's release of
           Aug. 24, 2026, which covers Oct. 1, 2022, through Aug. 6, 2026, and four of its files: arrests, detainers,
           arrests linked to detention stays, and detention stints. In every file, we removed rows the project flags as
-          likely duplicates, using its <code>duplicate_drop_row</code> column.</p>
+          likely duplicates, using its <code>duplicate_drop_row</code> column. More information about the
+          methodology and the notebook can be found on this <a
+            href="https://github.com/mehedi-marof/ice-maryland-analysis-aug26"> github repository</a> </p>
         <h3>Arrests</h3>
         <p>In the arrests file, each row is one ICE arrest. We counted an arrest as a Maryland arrest when the project's
           <code>apprehension_state_filled_in</code> column says Maryland. That column uses the state ICE recorded and,
@@ -263,7 +260,11 @@
           from the Maryland Department of Planning and leave out arrests at ICE's Baltimore offices, which people come
           to from across the state. The Eastern Shore includes Caroline, Cecil, Dorchester, Kent, Queen Anne's,
           Somerset, Talbot, Wicomico and Worcester counties. Map circles are placed at the center of each city.</p>
-      </section>
+        <h3>What the records can't tell us</h3>
+        <p>The records show each person's criminal history and how an arrest happened, not why ICE made the arrest. "No
+          record" reflects what ICE's systems showed at the time of arrest, which can be incomplete. The records do not
+          show immigration status. ICE often records a general area rather than an address, so CNS placed arrests by the
+          city or county ICE listed. ICE keeps updating its records, so counts for the most recent months may grow.</p>
     </div>
   </main>
 

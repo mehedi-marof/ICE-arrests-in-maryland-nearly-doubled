@@ -210,61 +210,31 @@
 
     </div>
     <div class="col">
-      </section>
       <section class="methods">
         <h2>How we did this analysis</h2>
-        <h3>The records</h3>
-        <p>This analysis uses U.S. Immigration and Customs Enforcement records that the Deportation Data Project, a
-          research group at the University of California, Berkeley, and UCLA, obtained through <a
-            href="https://deportationdata.org/foia.html">Freedom of Information Act lawsuits</a> and published on its <a
-            href="https://deportationdata.org/data/processed/ice.html">data page</a>. We used the project's release of
-          Aug. 24, 2026, which covers Oct. 1, 2022, through Aug. 6, 2026, and four of its files: arrests, detainers,
-          arrests linked to detention stays, and detention stints. In every file, we removed rows the project flags as
-          likely duplicates, using its <code>duplicate_drop_row</code> column. More information about the
-          methodology and the notebook can be found on this <a
-            href="https://github.com/mehedi-marof/ice-maryland-analysis-aug26"> github repository</a> </p>
-        <h3>Arrests</h3>
-        <p>In the arrests file, each row is one ICE arrest. We counted an arrest as a Maryland arrest when the project's
-          <code>apprehension_state_filled_in</code> column says Maryland. That column uses the state ICE recorded and,
-          when ICE left it blank, fills it in from the arrest location; it identifies 12,859 Maryland rows, 214 more
-          than ICE's own state field. After removing 218 likely duplicates, 12,641 arrests remained. Some people were
-          arrested more than once, and 28 rows have no person identifier (<code>unique_identifier</code>), so the story
-          counts arrests rather than people.
-        </p>
-        <p>Criminal history comes from <code>apprehension_criminality</code>, which records what ICE's systems showed at
-          the time of arrest: "Convicted Criminal," "Pending Criminal Charges" or "Other Immigration Violator." The
-          story calls the last group people with no prior conviction or pending charge. Whether a person already had a
-          final order of removal comes from <code>final_order_before_apprehension</code>.</p>
-        <p>How an arrest happened comes from <code>apprehension_method_simple</code>. We treated "Custodial Arrest,"
-          which includes ICE's Criminal Alien Program, and "287(g) Program" as custodial arrests, meaning a jail or
-          prison handed the person to ICE. All other arrests, mostly those ICE codes "At-Large Arrest," are
-          non-custodial. Arrests at ICE's two Baltimore offices were identified from <code>event_landmark</code>, where
-          ICE lists them as "NON DETAINED ENCOUNTERS AT BAL ERO" and "BALTIMORE ISAP OFFICE."</p>
-        <p>The story uses two time periods. Year-over-year comparisons use Jan. 1 through July 31 of each year, because
-          the records end Aug. 6. Everything else covers Jan. 20, 2025, when President Donald Trump's second term began,
-          through Aug. 6, 2026, unless the text says otherwise. Comparisons around Maryland's 287(g) ban are
-          monthly averages over periods of different lengths, Jan. 20, 2025, through Feb. 16, 2026 (393 days), and Feb.
-          17 through Aug. 6, 2026 (171 days): each count was divided by the number of days and multiplied by 30.4375,
-          the average length of a month. National figures come from the same file, using all states. The state
-          comparison includes the 43 states and territories with at least 1,000 arrests since Jan. 20, 2025, and leaves
-          out the District of Columbia.</p>
-        <p>The chart comparing Maryland with the nation divides, for each month from January 2024 through July 2026,
-          arrests coded "Other Immigration Violator" by all arrests, in Maryland and in all states.</p>
-        <h3>Places</h3>
-        <p>To place arrests in counties, we first checked whether <code>event_landmark</code> names a county or
-          Baltimore City. If it did not, we used the city ICE recorded in <code>apprehension_city_original</code>,
-          matched to a county through a lookup table CNS built from every spelling in the data. Most spellings matched a
-          ZIP code directory directly; others were corrected by hand or matched to the closest valid spelling, and a few
-          could not be placed. In all, 98.7% of arrests, and 99.5% of those since Jan. 20, 2025, were assigned a county.
-          Arrest rates use 2020 census populations
-          from the Maryland Department of Planning and leave out arrests at ICE's Baltimore offices, which people come
-          to from across the state. The Eastern Shore includes Caroline, Cecil, Dorchester, Kent, Queen Anne's,
-          Somerset, Talbot, Wicomico and Worcester counties. Map circles are placed at the center of each city.</p>
+        <p>Capital News Service analyzed U.S. Immigration and Customs Enforcement records that the <a
+            href="https://deportationdata.org/data/processed/ice.html">Deportation Data Project</a>, a research group at
+          the University of California, Berkeley, and UCLA, obtained through <a
+            href="https://deportationdata.org/foia.html">Freedom of Information Act lawsuits</a>. The records cover
+          Oct. 1, 2022, through Aug. 6, 2026. We removed rows the project flags as likely duplicates.</p>
+        <p>We counted 12,641 ICE arrests in Maryland. Because some people were arrested more than once, the story counts
+          arrests, not people. Year-over-year comparisons use January through July of each year, because the records end
+          in early August. Everything else covers Jan. 20, 2025, when President Donald Trump's second term began,
+          through
+          Aug. 6, 2026.</p>
+        <p>"No record" means ICE's systems showed no criminal conviction or pending charge at the time of arrest; ICE
+          calls these people "other immigration violators." Custodial arrests are those in which a jail, prison or other
+          law enforcement agency handed someone to ICE; all others are non-custodial. We placed arrests in counties
+          using
+          the city or area ICE recorded, and compared counties using 2020 census populations. The state comparison
+          includes the 43 states and territories with at least 1,000 arrests since Jan. 20, 2025.</p>
         <h3>What the records can't tell us</h3>
-        <p>The records show each person's criminal history and how an arrest happened, not why ICE made the arrest. "No
-          record" reflects what ICE's systems showed at the time of arrest, which can be incomplete. The records do not
-          show immigration status. ICE often records a general area rather than an address, so CNS placed arrests by the
-          city or county ICE listed. ICE keeps updating its records, so counts for the most recent months may grow.</p>
+        <p>The records show who ICE arrested and how, not why. "No record" reflects what ICE's systems showed, which can
+          be incomplete. The records do not show immigration status or where the people arrested lived. ICE keeps
+          updating its records, so counts for recent months may grow.</p>
+        <p>The full methodology, analysis notebook and data are on <a
+            href="https://github.com/mehedi-marof/ice-maryland-analysis-aug26">GitHub</a>.</p>
+      </section>
     </div>
   </main>
 

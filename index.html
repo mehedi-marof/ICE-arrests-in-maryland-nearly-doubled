@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ICE's arrests in Maryland nearly doubled this year. The growth is people with no criminal record | Capital News Service</title>
+  <meta name="description"
+    content="A Capital News Service analysis of ICE records: the agency&#x27;s arrests in Maryland nearly doubled this year, driven by people with no criminal record.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/page.css">
+  <link rel="stylesheet" href="css/charts.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollama@3.2.0/build/scrollama.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <!-- The page:
+     css/page.css     overall page design (type, columns, title screen, scrollytelling)
+     css/charts.css   CNS chart frames, legends, buttons, tooltips
+     js/main.js       loads data/*.csv and draws each chart from js/charts/*.js -->
+
+  <header class="masthead">
+    <a href="https://cnsmaryland.org/">
+      <img src="assets/cns-logo.png" alt="Capital News Service">
+    </a>
+  </header>
+  <div class="progress" aria-hidden="true"></div>
+
+  <section class="title bleed dark" aria-label="Story title">
+    <figure class="hero-photo"><img src="assets/hero-ice-hq.jpg" srcset="assets/hero-ice-hq-1000.jpg 1000w, assets/hero-ice-hq.jpg 2339w" sizes="100vw" alt="The flag of the U.S. Department of Homeland Security outside the Immigration and Customs Enforcement building in Washington."><figcaption>The Immigration and Customs Enforcement building in Washington, Oct. 3, 2025. Photo: Sam Cohen/Capital News Service</figcaption></figure>
+    <div class="panel">
+      <p class="kicker">Immigration enforcement</p>
+      <h1>ICE's arrests in Maryland nearly doubled this year. The growth is people with no criminal record</h1>
+      <p class="byline">By <a href="https://cnsmaryland.org/author/mhm/"><b>Mehedi Marof</b></a> · Capital News Service</p>
+      <p class="series">Also in this series: <a href="https://mehedimarof.github.io/after-an-ice-arrest-in-maryland-most-people-were-held-out-of-state-many-were-moved-again-and-again/">After the arrest</a></p>
+    </div>
+    <a class="cue" href="#story">Scroll to read<span aria-hidden="true">↓</span></a>
+  </section>
+
+  <main id="story">
+<div class="col" style="padding-top:56px"></div>
+<div class="col">
+<p>From January through July of this year, U.S. Immigration and Customs Enforcement arrested nearly 3,000 people in Maryland who had neither a criminal conviction nor a pending criminal charge. That is more than the agency arrested in the state in the nearly three years before, from October 2022 through July 2025, combined.</p>
+<p>ICE's arrests in Maryland overall nearly doubled, from 2,224 in January through July 2025 to over 4,000 in the same months of 2026. All of that increase came from people without a record. Arrests of people with convictions and of people facing pending charges each fell slightly.</p>
+<p>"Maryland feels like a microcosm of what's happening nationally," said Yulie Landan, a staff attorney at the National Immigration Project, a legal group suing ICE over its arrests in the state and over conditions in its Baltimore hold room. "We've been seeing massive increases in arrests there."</p>
+<p>Capital News Service analyzed ICE arrest, detainer and detention records that the <a href="https://deportationdata.org/data/processed/ice.html">Deportation Data Project</a>, a research group at the University of California, Berkeley, and UCLA, obtained through Freedom of Information Act lawsuits. The records run through Aug. 6, 2026.</p>
+<p>Maureen Sweeney, who directs the Immigration Clinic at the University of Maryland Francis King Carey School of Law, said she sees "a big disconnect between the administration's rhetoric about ... keeping the country safe from dangerous people and what's actually happening."</p>
+<p>What is happening, she said, is "that we're targeting and rounding up anybody who's a non-citizen… especially people who are brown or Black and look different from white Americans."</p>
+<h2>What "no record" means</h2>
+<p>ICE sorts the people it arrests by their criminal history at the time of arrest: people previously convicted of a crime, people facing a pending criminal charge and people with neither. ICE calls the third group “other immigration violators.” They are accused of violating civil immigration law, such as entering the country without permission or overstaying a visa, but ICE's systems show no criminal conviction or pending charge. The label does not mean they were in the country legally.</p>
+</div>
+<figure class="chart-frame wide" id="f-growth">
+<h3 class="chart-hed">Arrests of people with “no record” drove increase in Maryland</h3>
+<p class="chart-chatter">ICE arrests in Maryland, January–July of each year, by criminal history at the time of arrest</p>
+<div class="legend"><span><i style="background:var(--gray)"></i>Jan.–July 2025</span><span><i style="background:var(--ink)"></i>Jan.–July 2026</span></div>
+<div class="viz" id="c-growth"></div>
+<div class="chart-foot"><span class="chart-source">Source: ICE data obtained by the Deportation Data Project via
+          FOIA; CNS analysis. <b>Chart: Mehedi Marof / Capital News Service</b> · <a href="data/growth.csv">Get the
+            data</a></span><span class="wordmark">Capital News Service</span></div>
+</figure>
+<div class="col">
+<p>Arrests rose across the country too, but followed different patterns. Nationwide, ICE made nearly 253,000 arrests from January through July, up about 75% from a year earlier.</p>
+<p>Arrests of people with no record grew the most nationally as well. But arrests of people with pending charges also rose by nearly two-thirds, and arrests of people with convictions by about a fifth. In Maryland, both of those groups shrank.</p>
+<h2>Where ICE made arrests</h2>
+</div>
+<section aria-label="Map of ICE arrests in Maryland, step by step" class="scrolly bleed immersive" id="sc-arrests">
+<div class="sticky">
+<h3 class="chart-hed" style="padding:0 16px">Where ICE made arrests in Maryland since January 2025</h3>
+<div class="viz" id="m-arrests"></div>
+<div class="scale" id="sc-scale" style="opacity:0;transition:opacity .5s;padding:0 16px"></div>
+<div class="chart-foot" style="margin:6px 16px 0"><span class="chart-source">Arrests Jan. 20, 2025–Aug. 6, 2026,
+            by the city ICE recorded. Source: ICE data via the Deportation Data Project; CNS analysis. <b>Map: Mehedi
+              Marof /
+              CNS</b></span><span class="wordmark">Capital News Service</span></div>
+</div>
+<div class="steps">
+<div class="step" data-step="0">
+<h4 class="card-hed">ICE made 9,071 arrests in Maryland since Jan. 20, 2025.</h4>
+<p class="card-body">Each circle is a place ICE listed, sized by arrests through Aug. 6, 2026. They cluster around Baltimore, in the Washington suburbs and on the Eastern Shore.</p>
+<div class="card-legend"><span><i style="background:#3a3a3a"></i>All arrests</span></div>
+</div>
+<div class="step" data-step="1">
+<h4 class="card-hed">Most had no criminal record.</h4>
+<p class="card-body">About 63% had no prior criminal conviction and no pending charge in ICE's records. They made up most arrests in 19 of the 28 places with at least 50.</p>
+<div class="card-legend"><span><i style="background:var(--red)"></i>No prior conviction or pending charge</span></div>
+</div>
+<div class="step" data-step="2">
+<h4 class="card-hed">Hundreds were arrested at ICE's own offices.</h4>
+<p class="card-body">ICE made 889 arrests at its Baltimore field office and at the office where immigrants under supervision report for check-ins. About 77% had no record.</p>
+<div class="card-legend"><span><i style="background:var(--rust)"></i>At ICE's offices</span></div>
+</div>
+<div class="step" data-step="3">
+<h4 class="card-hed">Most arrests happened in the community.</h4>
+<p class="card-body">At homes, workplaces and roadsides. About 69% of those arrests involved someone with no record.</p>
+<div class="card-legend"><span><i style="background:var(--orange)"></i>In the community</span></div>
+</div>
+<div class="step" data-step="4">
+<h4 class="card-hed">The Eastern Shore stands out.</h4>
+<p class="card-body">Its nine counties, outlined, are home to about 7% of Marylanders but had 23% of ICE's arrests since January 2025. Rates are per resident, not per immigrant resident.</p>
+<div class="card-legend"><span><i style="background:#4d8fc7"></i>Arrests per 10,000 residents</span><span><i style="background:var(--ink)"></i>Eastern Shore</span></div>
+</div>
+</div>
+</section>
+<div class="col">
+<p>The increase was steepest on the Eastern Shore. ICE arrested 730 people with no record in the Shore's nine counties from January through July, nearly four times the 189 it arrested there in the same months of 2025.</p>
+<p>Since Trump took office, about 23% of ICE's arrests in Maryland have been on the Eastern Shore, a region home to about 7% of the state's residents.</p>
+<p>Wicomico County, which includes Salisbury, had the highest ICE arrest rate in the state, about 107 arrests for every 10,000 residents. Nearly all were made in the community rather than at the county jail. The rate counts all residents, not only immigrants, and the records do not show where the people arrested lived.</p>
+<p>ICE also made arrests inside its own offices in Baltimore, including one where immigrants under supervision report for scheduled check-ins. Since Jan. 20, 2025, the agency has recorded 889 arrests at the two offices, about three in four of them of people with no record.</p>
+<p>Those office arrests rose from 62 in the first three months of 2025 to 281 in the first three months of 2026, the most in any quarter in the records.</p>
+<p>"Maryland was really kind of on the forefront of mass increases in arrests, whether it be in the street or in check-ins," Landan said.</p>
+<h2>Maryland stands out</h2>
+<p>Since Trump took office, about 63% of ICE's arrests in Maryland have been of people with no criminal record, compared with about 39% nationwide.</p>
+<p>Among the 43 states and territories where ICE made at least 1,000 arrests in that period, only New York and West Virginia had a higher share.</p>
+</div>
+<figure class="chart-frame wide" id="f-states">
+<h3 class="chart-hed">Maryland had one of the highest shares of arrests with no record</h3>
+<p class="chart-chatter">Share of ICE arrests since Jan. 20, 2025, involving people with no prior conviction or pending charge. The 10 highest of the 43 states and territories with at least 1,000 arrests</p>
+<div class="viz" id="c-states"></div>
+<p class="chart-note">The dashed line is the share for the whole country. The District of Columbia is left out.</p>
+<div class="chart-foot"><span class="chart-source">Source: ICE data obtained by the Deportation Data Project via FOIA; CNS analysis. <b>Chart: Mehedi Marof / Capital News Service</b> · <a href="data/states.csv">Get the data</a></span><span class="wordmark">Capital News Service</span></div>
+</figure>
+<div class="col">
+<p>The share has swung widely over the years. In late 2022, under President Joe Biden, about three in four people ICE arrested in Maryland had no record. By December 2024, the share had fallen to about 17%.</p>
+<p>In January 2025, the month Trump returned to office, Maryland's share matched the nation's, at about 21%. Every month since, it has been higher than the national share, peaking at about 77% in February 2026, double the national rate that month.</p>
+</div>
+<figure class="chart-frame wide" id="f-share">
+<h3 class="chart-hed">Maryland's share of arrests with no record pulled away from the nation's</h3>
+<p class="chart-chatter">Share of ICE arrests involving people with no prior conviction or pending charge, by month, January 2024–July 2026</p>
+<div class="legend"><span><i class="line" style="background:var(--red)"></i>Maryland</span><span><i class="line" style="background:var(--gray)"></i>United States</span></div>
+<div class="viz" id="c-share"></div>
+<p class="chart-note">August 2026 is excluded because the month is incomplete.</p>
+<div class="chart-foot"><span class="chart-source">Source: ICE data obtained by the Deportation Data Project via FOIA; CNS analysis. <b>Chart: Mehedi Marof / Capital News Service</b> · <a href="data/share_monthly.csv">Get the data</a></span><span class="wordmark">Capital News Service</span></div>
+</figure>
+<div class="col">
+<p>Most people ICE arrested in Maryland are from Central America and Mexico. Since Jan. 20, 2025, about 78% were citizens of Guatemala, El Salvador, Honduras or Mexico.</p>
+<p>Most of the growth came from non-custodial arrests, those made at homes, workplaces, roadsides and ICE's own offices.</p>
+<p>Immigration lawyers say the numbers cut against how the administration describes its enforcement. "They keep saying we're going after the worst of the worst and the reality is they're going after everyone," Landan said. "It's just about the numbers for them."</p>
+<p class="readnext"><a href="https://mehedimarof.github.io/after-an-ice-arrest-in-maryland-most-people-were-held-out-of-state-many-were-moved-again-and-again/"><span>Read next</span>After an ICE arrest in Maryland, most people were held out of state. Many were moved again and again</a></p>
+</div>
+<div class="col">
+      <section class="limits-text">
+        <h2>What the records can't tell us</h2>
+        <p>The records show each person's criminal history and how an arrest happened, not why ICE made the arrest. "No record" reflects what ICE's systems showed at the time of arrest, which can be incomplete. The records do not show immigration status. ICE often records a general area rather than an address, so CNS placed arrests by the city or county ICE listed. ICE keeps updating its records, so counts for the most recent months may grow.</p>
+      </section>
+      <section class="methods">
+        <h2>How we did this analysis</h2>
+        <h3>The records</h3>
+<p>This analysis uses U.S. Immigration and Customs Enforcement records that the Deportation Data Project, a
+          research group at the University of California, Berkeley, and UCLA, obtained through <a href="https://deportationdata.org/foia.html">Freedom of Information Act lawsuits</a> and published on its <a href="https://deportationdata.org/data/processed/ice.html">data page</a>. We used the project's release of
+          Aug. 24, 2026, which covers Oct. 1, 2022, through Aug. 6, 2026, and four of its files: arrests, detainers,
+          arrests linked to detention stays, and detention stints. In every file, we removed rows the project flags as
+          likely duplicates, using its <code>duplicate_drop_row</code> column.</p>
+        <h3>Arrests</h3>
+<p>In the arrests file, each row is one ICE arrest. We counted an arrest as a Maryland arrest when the project's
+          <code>apprehension_state_filled_in</code> column says Maryland. That column uses the state ICE recorded and,
+          when ICE left it blank, fills it in from the arrest location; it identifies 12,859 Maryland rows, 214 more
+          than ICE's own state field. After removing 218 likely duplicates, 12,641 arrests remained. Some people were
+          arrested more than once, and 28 rows have no person identifier (<code>unique_identifier</code>), so the story
+          counts arrests rather than people.
+        </p>
+<p>Criminal history comes from <code>apprehension_criminality</code>, which records what ICE's systems showed at
+          the time of arrest: "Convicted Criminal," "Pending Criminal Charges" or "Other Immigration Violator." The
+          story calls the last group people with no prior conviction or pending charge. Whether a person already had a
+          final order of removal comes from <code>final_order_before_apprehension</code>.</p>
+<p>How an arrest happened comes from <code>apprehension_method_simple</code>. We treated "Custodial Arrest,"
+          which includes ICE's Criminal Alien Program, and "287(g) Program" as custodial arrests, meaning a jail or
+          prison handed the person to ICE. All other arrests, mostly those ICE codes "At-Large Arrest," are
+          non-custodial. Arrests at ICE's two Baltimore offices were identified from <code>event_landmark</code>, where
+          ICE lists them as "NON DETAINED ENCOUNTERS AT BAL ERO" and "BALTIMORE ISAP OFFICE."</p>
+<p>The story uses two time periods. Year-over-year comparisons use Jan. 1 through July 31 of each year, because
+          the records end Aug. 6. Everything else covers Jan. 20, 2025, when President Donald Trump's second term began,
+          through Aug. 6, 2026, unless the text says otherwise. Comparisons around Maryland's 287(g) ban are
+          monthly averages over periods of different lengths, Jan. 20, 2025, through Feb. 16, 2026 (393 days), and Feb.
+          17 through Aug. 6, 2026 (171 days): each count was divided by the number of days and multiplied by 30.4375,
+          the average length of a month. National figures come from the same file, using all states. The state
+          comparison includes the 43 states and territories with at least 1,000 arrests since Jan. 20, 2025, and leaves
+          out the District of Columbia.</p>
+<p>The chart comparing Maryland with the nation divides, for each month from January 2024 through July 2026, arrests coded "Other Immigration Violator" by all arrests, in Maryland and in all states.</p>
+        <h3>Places</h3>
+<p>To place arrests in counties, we first checked whether <code>event_landmark</code> names a county or
+          Baltimore City. If it did not, we used the city ICE recorded in <code>apprehension_city_original</code>,
+          matched to a county through a lookup table CNS built from every spelling in the data. Most spellings matched a
+          ZIP code directory directly; others were corrected by hand or matched to the closest valid spelling, and a few
+          could not be placed. In all, 98.7% of arrests, and 99.5% of those since Jan. 20, 2025, were assigned a county.
+          Arrest rates use 2020 census populations
+          from the Maryland Department of Planning and leave out arrests at ICE's Baltimore offices, which people come
+          to from across the state. The Eastern Shore includes Caroline, Cecil, Dorchester, Kent, Queen Anne's,
+          Somerset, Talbot, Wicomico and Worcester counties. Map circles are placed at the center of each city.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <img src="assets/cns-logo.png" alt="Capital News Service">
+    <span>Capital News Service · Philip Merrill College of Journalism, University of Maryland</span>
+  </footer>
+</body>
+
+</html>

@@ -22,7 +22,7 @@ export function drawStateShare(host, rows) {
     svg.append('text').attr('class', md ? 'label' : null).attr('x', x(d.share_no_record) + 5).attr('y', y + 16).style('font-size', '12px').text(pct(d.share_no_record));
     svg.append('rect').attr('x', 0).attr('y', y).attr('width', W).attr('height', rh).attr('fill', 'transparent')
       .on('mousemove', () => tip.show(x(d.share_no_record) / W * host.clientWidth, (y + 6) / h * host.clientHeight,
-        `<b>${d.state}</b>${row('No record', pct(d.share_no_record))}${row('Arrests', fmt(d.arrests))}`))
+        `<b>${d.state}</b>${row('Total arrests', fmt(d.arrests))}${row('No record', pct(d.share_no_record))}`))
       .on('mouseleave', tip.hide);
   });
   // the national share as a reference line

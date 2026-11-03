@@ -7,7 +7,7 @@ import { COLORS, fmt, pct, shortCounty, tooltip, row, DUR } from '../lib/util.js
 export const MODES = {
   all:       { key: 'arrests',   color: '#3a3a3a',     label: 'All arrests' },
   norecord:  { key: 'no_record', color: COLORS.red,    label: 'No prior conviction or charge' },
-  community: { key: 'community', color: COLORS.orange, label: 'In the community' },
+  community: { key: 'community', color: COLORS.orange, label: 'Non-custodial' },
   custody:   { key: 'custody',   color: COLORS.purple, label: 'From jails and prisons' },
   office:    { key: 'office',    color: COLORS.rust,   label: "At ICE's offices" },
 };
@@ -46,7 +46,7 @@ export function createArrestMap(host, D, { choropleth = false, onSelect = null, 
   const dots = svg.append('g').selectAll('circle').data(cities).join('circle').attr('cx', d => d.x).attr('cy', d => d.y).attr('r', 0)
     .attr('stroke', T.ring).attr('stroke-width', 0.7).attr('fill-opacity', 0.6)
     .on('mouseenter', (ev, d) => tip.show(d.x / W * host.clientWidth, (d.y - 8) / H * host.clientHeight,
-      `<b>${d.name}</b>${row('Arrests since Jan. 20, 2025', fmt(d.arrests))}${row('No prior conviction or charge', fmt(d.no_record))}${row('In the community', fmt(d.community))}${row('From jails and prisons', fmt(d.custody))}${row("At ICE's offices", fmt(d.office))}`))
+      `<b>${d.name}</b>${row('Arrests since Jan. 20, 2025', fmt(d.arrests))}${row('No prior conviction or charge', fmt(d.no_record))}${row('Non-custodial, outside ICE offices', fmt(d.community))}${row('From jails and prisons', fmt(d.custody))}${row("At ICE's offices", fmt(d.office))}`))
     .on('mouseleave', tip.hide);
   const labels = svg.append('g').attr('pointer-events', 'none');
   LABELS.forEach(([n, dx, dy, a]) => { const c = cities.find(c => c.name === n); if (c) labels.append('text').attr('class', 'label halo').attr('x', c.x + dx).attr('y', c.y + dy).attr('text-anchor', a).style('font-size', 13 * k + 'px').text(n); });

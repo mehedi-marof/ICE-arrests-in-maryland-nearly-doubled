@@ -1095,6 +1095,7 @@ p.hl mark {
     height: 44vh
   }
 }
+
 /* =================== Story card linking the two parts =================== */
 .storycard {
   display: flex;
